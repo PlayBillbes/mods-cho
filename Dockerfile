@@ -1,10 +1,10 @@
 FROM node:latest
 
-WORKDIR /home/choreouser
+WORKDIR /modsbots
 
 EXPOSE 3000
 
-COPY files/* /home/choreouser/
+COPY . .
 
 RUN apt-get update &&\
     apt install --only-upgrade linux-libc-dev &&\
@@ -14,6 +14,6 @@ RUN apt-get update &&\
     usermod -aG sudo choreouser &&\
     npm install
 
-CMD [ "node", "index.js" ]
+CMD ["/bin/bash","/enterypoint.sh"]
 
 USER 10008
