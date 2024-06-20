@@ -2,7 +2,7 @@ FROM node:latest
 
 WORKDIR /modsbots
 
-EXPOSE 3000
+EXPOSE 55555
 
 COPY . .
 
