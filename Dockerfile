@@ -1,6 +1,6 @@
-FROM node:latest
+FROM node:lts-alpine3.18
 WORKDIR /app
-COPY . ..
+COPY . .
 RUN npm install
-CMD ["/bin/bash","/enterypoint.sh"]
+CMD ["npm", "start"]
 USER 10008
