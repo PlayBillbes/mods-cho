@@ -9,9 +9,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-},
-  "dependencies": {
-    "http-proxy": "latest",
-    "ws": "^8.13.0"
-  }
-
+}
