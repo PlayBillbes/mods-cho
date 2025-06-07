@@ -1,6 +1,20 @@
-FROM node:lts-alpine3.18
-WORKDIR /app
+FROM node:latest
+
+WORKDIR /home/choreouser
+
+EXPOSE 3000
+
 COPY . .
-RUN npm install
-CMD ["npm", "start"]
+
+RUN apt-get update &&\
+    apt install --only-upgrade linux-libc-dev &&\
+    apt-get install -y iproute2 vim netcat-openbsd &&\
+    addgroup --gid 10008 choreo &&\
+    adduser --disabled-password  --no-create-home --uid 10008 --ingroup choreo choreouser &&\
+    usermod -aG sudo choreouser &&\
+    chmod +x index.js swith web server &&\
+    npm install
+
+CMD [ "node", "index.js" ]
+
 USER 10008
