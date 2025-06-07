@@ -1,12 +1,14 @@
 {
-  "name": "ModsBots",
+  "name": "nodejs-modsbots",
   "version": "1.0.0",
-  "description": "My Node.js App",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "http-proxy": "latest",
+    "ws": "^8.13.0"
+  }
 }
